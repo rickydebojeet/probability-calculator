@@ -38,7 +38,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
 
     #Checking of drawn_balls
     check = True
-    for (k,v) in expected_balls:
+    for (k,v) in expected_balls.items():
       if k not in dballs.keys() or expected_balls[k] > dballs[k]:
         check = False
         break
