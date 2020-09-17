@@ -7,8 +7,8 @@ class Hat:
   #Instansiation
   def __init__(self, **balls):
     self.contents = list()
-    for (k, v) in balls.items:
-      for x in v:
+    for (k, v) in balls.items():
+      for x in range(v):
         self.contents.append(k)
 
   #Defining draw method
