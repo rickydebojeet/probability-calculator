@@ -13,13 +13,12 @@ class Hat:
 
   #Defining draw method
   def draw(self, num):
-    tmp = copy.copy(self.contents)
-    if num >= len(tmp):
-      return tmp
+    if num >= len(self.contents):
+      return self.contents
     else:
       out = list()
-      for x in num:
-        out.append(tmp.pop(random.randrange(len(tmp))))
+      for x in range(num):
+        out.append(self.contents.pop(random.randrange(len(self.contents))))
       return out
 
 
