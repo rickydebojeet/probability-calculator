@@ -24,3 +24,26 @@ class Hat:
 
 
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+  success = 0
+  
+  #Experiments Loop
+  for i in range(num_experiments):
+    fake = copy.deepcopy(hat)
+    
+    #Drawing balls
+    drawn_balls = fake.draw(num_balls_drawn)
+    dballs = dict()
+    for ball in drawn_balls:
+      dballs[ball] = dballs.get(ball, 0) + 1
+
+    #Checking of drawn_balls
+    check = True
+    for (k,v) in expected_balls:
+      if k not in dballs.keys() or expected_balls[k] > dballs[k]:
+        check = False
+        break
+      
+    if check:
+      success = success + 1
+
+  return (success / num_experiments)
